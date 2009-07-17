@@ -1,4 +1,7 @@
 class FeedController < ApplicationController
+
+  skip_before_filter :verify_authenticity_token
+
   def index
     @feeds = FeedItem.find(:all, :select => 'DISTINCT feed_name')
     respond_to do |format|
@@ -17,17 +20,19 @@ class FeedController < ApplicationController
   end
 
   def update
-    item = FeedItem.find_by_feed_name_and_title(params[:feed_item][:feed_name], params[:feed_item][:title])
+    item = FeedItem.find_by_feed_name_and_title(params[:feed_name], params[:title])
     if item
-      if params[:feed_item][:description] == ''
+      if params[:description] == ''
         item.destroy
       else
-        item.update_attribute(:description, params[:feed_item][:description])
+        item.update_attribute(:description, params[:description])
       end
     else
-      FeedItem.create(params[:feed_item])
+      FeedItem.create(:feed_name => params[:feed_name],
+        :title => params[:title],
+        :description => params[:description])
     end
-    redirect_to feed_url(params[:feed_item][:feed_name])
+    redirect_to feed_url(params[:feed_name])
   end
 
 end
