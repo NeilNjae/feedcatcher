@@ -4,7 +4,7 @@ class FeedController < ApplicationController
   end
 
   def show
-    @feed_items = FeedItem.find_all_by_feed_name(params[:id])
+    @feed_items = FeedItem.find_all_by_feed_name(params[:feed_name])
   end
 
   def update

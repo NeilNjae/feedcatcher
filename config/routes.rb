@@ -30,14 +30,28 @@ ActionController::Routing::Routes.draw do |map|
   #     admin.resources :products
   #   end
 
+  map.index 'index.:format',
+    :conditions => { :method => :get },
+    :controller => 'feed',
+    :action => 'index'
+  map.feed ':feed_name.:format',
+    :conditions => { :method => :get },
+    :controller => 'feed',
+    :action => 'show'
+  map.update ':feed_name',
+    :conditions => { :method => :post },
+    :defaults => { :feed_name => nil },
+    :controller => 'feed',
+    :action => 'update'
+
   # You can have the root of your site routed with map.root -- just remember to delete public/index.html.
-  # map.root :controller => "welcome"
+  map.root :controller => "feed"
 
   # See how all your routes lay out with "rake routes"
 
   # Install the default routes as the lowest priority.
   # Note: These default routes make all actions in every controller accessible via GET requests. You should
   # consider removing the them or commenting them out if you're using named routes and resources.
-  map.connect ':controller/:action/:id'
-  map.connect ':controller/:action/:id.:format'
+#  map.connect ':controller/:action/:id'
+#  map.connect ':controller/:action/:id.:format'
 end
