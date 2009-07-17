@@ -1,6 +1,6 @@
 class FeedItem < ActiveRecord::Base
 
-  require 'cgi' # needed for url decoding
+  # require 'cgi' # needed for url decoding
 
   validates_presence_of :feed_name, :title, :description
   validate :feed_name_must_be_legal
@@ -8,8 +8,8 @@ class FeedItem < ActiveRecord::Base
 protected
 
   def feed_name_must_be_legal
-    if url_encode(feed_name) != feed_name or
-        CGI::unescape(feed_name) != feed_name or
+    if Rack::Utils::escape(feed_name) != feed_name or
+        Rack::Utils::unescape(feed_name) != feed_name or
         feed_name == 'index' or
         feed_name == 'show' or
         feed_name == 'update' or
