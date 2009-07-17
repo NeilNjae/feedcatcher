@@ -1,0 +1,810 @@
+  [4;36;1mSQL (6.6ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (27.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (497.4ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (333.1ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (20.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateFeedItems (20090717095501)
+  [4;35;1mSQL (41.4ms)[0m   [0mCREATE TABLE `feed_items` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `feed_name` varchar(255), `title` varchar(255), `description` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (7.3ms)[0m   [0;1mCREATE INDEX `index_feed_items_on_feed_name` ON `feed_items` (`feed_name`)[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090717095501')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (81.2ms)[0m   [0mSHOW FIELDS FROM `feed_items`[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mdescribe `feed_items`[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW KEYS FROM `feed_items`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateFeedItems (20090717095501)
+Migrating to AddTestData (20090717095948)
+  [4;36;1mFeedItem Delete all (0.3ms)[0m   [0;1mDELETE FROM `feed_items` [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateFeedItems (20090717095501)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW FIELDS FROM `feed_items`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mdescribe `feed_items`[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW KEYS FROM `feed_items`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateFeedItems (20090717095501)
+Migrating to AddTestData (20090717095948)
+  [4;36;1mFeedItem Delete all (0.2ms)[0m   [0;1mDELETE FROM `feed_items` [0m
+  [4;35;1mFeedItem Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `feed_items`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (12.2ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:42', 'feed-a-item-01', 'feed-a', 'Feed a, Item 1 has a description', '2009-07-17 10:19:42')[0m
+  [4;36;1mSQL (38.8ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:42', 'feed-b-item-01', 'feed-b', 'Feed b, Item 1 has a description', '2009-07-17 10:19:42')[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.4ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:42', 'feed-c-item-01', 'feed-c', 'Feed c, Item 1 has a description', '2009-07-17 10:19:42')[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:42', 'feed-d-item-01', 'feed-d', 'Feed d, Item 1 has a description', '2009-07-17 10:19:42')[0m
+  [4;35;1mSQL (4.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.3ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:42', 'feed-e-item-01', 'feed-e', 'Feed e, Item 1 has a description', '2009-07-17 10:19:42')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:42', 'feed-f-item-01', 'feed-f', 'Feed f, Item 1 has a description', '2009-07-17 10:19:42')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.3ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:42', 'feed-g-item-01', 'feed-g', 'Feed g, Item 1 has a description', '2009-07-17 10:19:42')[0m
+  [4;36;1mSQL (4.6ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:42', 'feed-h-item-01', 'feed-h', 'Feed h, Item 1 has a description', '2009-07-17 10:19:42')[0m
+  [4;35;1mSQL (19.7ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.3ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:42', 'feed-i-item-01', 'feed-i', 'Feed i, Item 1 has a description', '2009-07-17 10:19:42')[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:42', 'feed-j-item-01', 'feed-j', 'Feed j, Item 1 has a description', '2009-07-17 10:19:42')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.3ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:42', 'feed-a-item-02', 'feed-a', 'Feed a, Item 2 has a description', '2009-07-17 10:19:42')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:42', 'feed-b-item-02', 'feed-b', 'Feed b, Item 2 has a description', '2009-07-17 10:19:42')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.3ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:42', 'feed-c-item-02', 'feed-c', 'Feed c, Item 2 has a description', '2009-07-17 10:19:42')[0m
+  [4;36;1mSQL (6.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:42', 'feed-d-item-02', 'feed-d', 'Feed d, Item 2 has a description', '2009-07-17 10:19:42')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.3ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:42', 'feed-e-item-02', 'feed-e', 'Feed e, Item 2 has a description', '2009-07-17 10:19:42')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:42', 'feed-f-item-02', 'feed-f', 'Feed f, Item 2 has a description', '2009-07-17 10:19:42')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.4ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:42', 'feed-g-item-02', 'feed-g', 'Feed g, Item 2 has a description', '2009-07-17 10:19:42')[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.5ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:42', 'feed-h-item-02', 'feed-h', 'Feed h, Item 2 has a description', '2009-07-17 10:19:42')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.4ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:42', 'feed-i-item-02', 'feed-i', 'Feed i, Item 2 has a description', '2009-07-17 10:19:42')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.6ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:42', 'feed-j-item-02', 'feed-j', 'Feed j, Item 2 has a description', '2009-07-17 10:19:42')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.3ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:42', 'feed-a-item-03', 'feed-a', 'Feed a, Item 3 has a description', '2009-07-17 10:19:42')[0m
+  [4;36;1mSQL (5.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:42', 'feed-b-item-03', 'feed-b', 'Feed b, Item 3 has a description', '2009-07-17 10:19:42')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.3ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:42', 'feed-c-item-03', 'feed-c', 'Feed c, Item 3 has a description', '2009-07-17 10:19:42')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:42', 'feed-d-item-03', 'feed-d', 'Feed d, Item 3 has a description', '2009-07-17 10:19:42')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.3ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:42', 'feed-e-item-03', 'feed-e', 'Feed e, Item 3 has a description', '2009-07-17 10:19:42')[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:42', 'feed-f-item-03', 'feed-f', 'Feed f, Item 3 has a description', '2009-07-17 10:19:42')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.3ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:42', 'feed-g-item-03', 'feed-g', 'Feed g, Item 3 has a description', '2009-07-17 10:19:42')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:42', 'feed-h-item-03', 'feed-h', 'Feed h, Item 3 has a description', '2009-07-17 10:19:42')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.3ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:42', 'feed-i-item-03', 'feed-i', 'Feed i, Item 3 has a description', '2009-07-17 10:19:42')[0m
+  [4;36;1mSQL (7.2ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:42', 'feed-j-item-03', 'feed-j', 'Feed j, Item 3 has a description', '2009-07-17 10:19:42')[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.4ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-a-item-04', 'feed-a', 'Feed a, Item 4 has a description', '2009-07-17 10:19:43')[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.4ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-b-item-04', 'feed-b', 'Feed b, Item 4 has a description', '2009-07-17 10:19:43')[0m
+  [4;35;1mSQL (3.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.3ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-c-item-04', 'feed-c', 'Feed c, Item 4 has a description', '2009-07-17 10:19:43')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-d-item-04', 'feed-d', 'Feed d, Item 4 has a description', '2009-07-17 10:19:43')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.3ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-e-item-04', 'feed-e', 'Feed e, Item 4 has a description', '2009-07-17 10:19:43')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-f-item-04', 'feed-f', 'Feed f, Item 4 has a description', '2009-07-17 10:19:43')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.3ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-g-item-04', 'feed-g', 'Feed g, Item 4 has a description', '2009-07-17 10:19:43')[0m
+  [4;36;1mSQL (6.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-h-item-04', 'feed-h', 'Feed h, Item 4 has a description', '2009-07-17 10:19:43')[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.7ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-i-item-04', 'feed-i', 'Feed i, Item 4 has a description', '2009-07-17 10:19:43')[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-j-item-04', 'feed-j', 'Feed j, Item 4 has a description', '2009-07-17 10:19:43')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.3ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-a-item-05', 'feed-a', 'Feed a, Item 5 has a description', '2009-07-17 10:19:43')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-b-item-05', 'feed-b', 'Feed b, Item 5 has a description', '2009-07-17 10:19:43')[0m
+  [4;35;1mSQL (10.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.3ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-c-item-05', 'feed-c', 'Feed c, Item 5 has a description', '2009-07-17 10:19:43')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-d-item-05', 'feed-d', 'Feed d, Item 5 has a description', '2009-07-17 10:19:43')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.3ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-e-item-05', 'feed-e', 'Feed e, Item 5 has a description', '2009-07-17 10:19:43')[0m
+  [4;36;1mSQL (3.9ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-f-item-05', 'feed-f', 'Feed f, Item 5 has a description', '2009-07-17 10:19:43')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.3ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-g-item-05', 'feed-g', 'Feed g, Item 5 has a description', '2009-07-17 10:19:43')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-h-item-05', 'feed-h', 'Feed h, Item 5 has a description', '2009-07-17 10:19:43')[0m
+  [4;35;1mSQL (4.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.3ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-i-item-05', 'feed-i', 'Feed i, Item 5 has a description', '2009-07-17 10:19:43')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-j-item-05', 'feed-j', 'Feed j, Item 5 has a description', '2009-07-17 10:19:43')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.3ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-a-item-06', 'feed-a', 'Feed a, Item 6 has a description', '2009-07-17 10:19:43')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-b-item-06', 'feed-b', 'Feed b, Item 6 has a description', '2009-07-17 10:19:43')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.3ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-c-item-06', 'feed-c', 'Feed c, Item 6 has a description', '2009-07-17 10:19:43')[0m
+  [4;36;1mSQL (5.2ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-d-item-06', 'feed-d', 'Feed d, Item 6 has a description', '2009-07-17 10:19:43')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.3ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-e-item-06', 'feed-e', 'Feed e, Item 6 has a description', '2009-07-17 10:19:43')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-f-item-06', 'feed-f', 'Feed f, Item 6 has a description', '2009-07-17 10:19:43')[0m
+  [4;35;1mSQL (3.7ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.3ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-g-item-06', 'feed-g', 'Feed g, Item 6 has a description', '2009-07-17 10:19:43')[0m
+  [4;36;1mSQL (4.7ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-h-item-06', 'feed-h', 'Feed h, Item 6 has a description', '2009-07-17 10:19:43')[0m
+  [4;35;1mSQL (4.7ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.3ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-i-item-06', 'feed-i', 'Feed i, Item 6 has a description', '2009-07-17 10:19:43')[0m
+  [4;36;1mSQL (4.8ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.5ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-j-item-06', 'feed-j', 'Feed j, Item 6 has a description', '2009-07-17 10:19:43')[0m
+  [4;35;1mSQL (4.7ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.3ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-a-item-07', 'feed-a', 'Feed a, Item 7 has a description', '2009-07-17 10:19:43')[0m
+  [4;36;1mSQL (2.7ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-b-item-07', 'feed-b', 'Feed b, Item 7 has a description', '2009-07-17 10:19:43')[0m
+  [4;35;1mSQL (4.7ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.3ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-c-item-07', 'feed-c', 'Feed c, Item 7 has a description', '2009-07-17 10:19:43')[0m
+  [4;36;1mSQL (4.2ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.4ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-d-item-07', 'feed-d', 'Feed d, Item 7 has a description', '2009-07-17 10:19:43')[0m
+  [4;35;1mSQL (4.8ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.3ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-e-item-07', 'feed-e', 'Feed e, Item 7 has a description', '2009-07-17 10:19:43')[0m
+  [4;36;1mSQL (4.7ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-f-item-07', 'feed-f', 'Feed f, Item 7 has a description', '2009-07-17 10:19:43')[0m
+  [4;35;1mSQL (4.8ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.3ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-g-item-07', 'feed-g', 'Feed g, Item 7 has a description', '2009-07-17 10:19:43')[0m
+  [4;36;1mSQL (4.7ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-h-item-07', 'feed-h', 'Feed h, Item 7 has a description', '2009-07-17 10:19:43')[0m
+  [4;35;1mSQL (3.9ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.3ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-i-item-07', 'feed-i', 'Feed i, Item 7 has a description', '2009-07-17 10:19:43')[0m
+  [4;36;1mSQL (3.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-j-item-07', 'feed-j', 'Feed j, Item 7 has a description', '2009-07-17 10:19:43')[0m
+  [4;35;1mSQL (4.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.3ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-a-item-08', 'feed-a', 'Feed a, Item 8 has a description', '2009-07-17 10:19:43')[0m
+  [4;36;1mSQL (4.9ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-b-item-08', 'feed-b', 'Feed b, Item 8 has a description', '2009-07-17 10:19:43')[0m
+  [4;35;1mSQL (4.8ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.3ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-c-item-08', 'feed-c', 'Feed c, Item 8 has a description', '2009-07-17 10:19:43')[0m
+  [4;36;1mSQL (4.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.6ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-d-item-08', 'feed-d', 'Feed d, Item 8 has a description', '2009-07-17 10:19:43')[0m
+  [4;35;1mSQL (4.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.4ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-e-item-08', 'feed-e', 'Feed e, Item 8 has a description', '2009-07-17 10:19:43')[0m
+  [4;36;1mSQL (4.8ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.4ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-f-item-08', 'feed-f', 'Feed f, Item 8 has a description', '2009-07-17 10:19:43')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.4ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-g-item-08', 'feed-g', 'Feed g, Item 8 has a description', '2009-07-17 10:19:43')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-h-item-08', 'feed-h', 'Feed h, Item 8 has a description', '2009-07-17 10:19:43')[0m
+  [4;35;1mSQL (5.2ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.3ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-i-item-08', 'feed-i', 'Feed i, Item 8 has a description', '2009-07-17 10:19:43')[0m
+  [4;36;1mSQL (4.9ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-j-item-08', 'feed-j', 'Feed j, Item 8 has a description', '2009-07-17 10:19:43')[0m
+  [4;35;1mSQL (4.9ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.3ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-a-item-09', 'feed-a', 'Feed a, Item 9 has a description', '2009-07-17 10:19:43')[0m
+  [4;36;1mSQL (4.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-b-item-09', 'feed-b', 'Feed b, Item 9 has a description', '2009-07-17 10:19:43')[0m
+  [4;35;1mSQL (4.8ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.6ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-c-item-09', 'feed-c', 'Feed c, Item 9 has a description', '2009-07-17 10:19:43')[0m
+  [4;36;1mSQL (4.7ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-d-item-09', 'feed-d', 'Feed d, Item 9 has a description', '2009-07-17 10:19:43')[0m
+  [4;35;1mSQL (4.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.3ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-e-item-09', 'feed-e', 'Feed e, Item 9 has a description', '2009-07-17 10:19:43')[0m
+  [4;36;1mSQL (4.9ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-f-item-09', 'feed-f', 'Feed f, Item 9 has a description', '2009-07-17 10:19:43')[0m
+  [4;35;1mSQL (4.2ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.3ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-g-item-09', 'feed-g', 'Feed g, Item 9 has a description', '2009-07-17 10:19:43')[0m
+  [4;36;1mSQL (5.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-h-item-09', 'feed-h', 'Feed h, Item 9 has a description', '2009-07-17 10:19:43')[0m
+  [4;35;1mSQL (4.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.3ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-i-item-09', 'feed-i', 'Feed i, Item 9 has a description', '2009-07-17 10:19:43')[0m
+  [4;36;1mSQL (4.9ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-j-item-09', 'feed-j', 'Feed j, Item 9 has a description', '2009-07-17 10:19:43')[0m
+  [4;35;1mSQL (4.8ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.4ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-a-item-10', 'feed-a', 'Feed a, Item 10 has a description', '2009-07-17 10:19:43')[0m
+  [4;36;1mSQL (4.7ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-b-item-10', 'feed-b', 'Feed b, Item 10 has a description', '2009-07-17 10:19:43')[0m
+  [4;35;1mSQL (4.9ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.3ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-c-item-10', 'feed-c', 'Feed c, Item 10 has a description', '2009-07-17 10:19:43')[0m
+  [4;36;1mSQL (3.2ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.4ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-d-item-10', 'feed-d', 'Feed d, Item 10 has a description', '2009-07-17 10:19:43')[0m
+  [4;35;1mSQL (4.8ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.3ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-e-item-10', 'feed-e', 'Feed e, Item 10 has a description', '2009-07-17 10:19:43')[0m
+  [4;36;1mSQL (4.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-f-item-10', 'feed-f', 'Feed f, Item 10 has a description', '2009-07-17 10:19:43')[0m
+  [4;35;1mSQL (4.9ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.3ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-g-item-10', 'feed-g', 'Feed g, Item 10 has a description', '2009-07-17 10:19:43')[0m
+  [4;36;1mSQL (4.8ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-h-item-10', 'feed-h', 'Feed h, Item 10 has a description', '2009-07-17 10:19:43')[0m
+  [4;35;1mSQL (4.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.3ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-i-item-10', 'feed-i', 'Feed i, Item 10 has a description', '2009-07-17 10:19:43')[0m
+  [4;36;1mSQL (4.9ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-j-item-10', 'feed-j', 'Feed j, Item 10 has a description', '2009-07-17 10:19:43')[0m
+  [4;35;1mSQL (4.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.3ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-a-item-11', 'feed-a', 'Feed a, Item 11 has a description', '2009-07-17 10:19:43')[0m
+  [4;36;1mSQL (4.8ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.4ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-b-item-11', 'feed-b', 'Feed b, Item 11 has a description', '2009-07-17 10:19:43')[0m
+  [4;35;1mSQL (4.8ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.3ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-c-item-11', 'feed-c', 'Feed c, Item 11 has a description', '2009-07-17 10:19:43')[0m
+  [4;36;1mSQL (4.8ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-d-item-11', 'feed-d', 'Feed d, Item 11 has a description', '2009-07-17 10:19:43')[0m
+  [4;35;1mSQL (4.9ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.3ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-e-item-11', 'feed-e', 'Feed e, Item 11 has a description', '2009-07-17 10:19:43')[0m
+  [4;36;1mSQL (4.7ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-f-item-11', 'feed-f', 'Feed f, Item 11 has a description', '2009-07-17 10:19:43')[0m
+  [4;35;1mSQL (4.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.6ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-g-item-11', 'feed-g', 'Feed g, Item 11 has a description', '2009-07-17 10:19:43')[0m
+  [4;36;1mSQL (4.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-h-item-11', 'feed-h', 'Feed h, Item 11 has a description', '2009-07-17 10:19:43')[0m
+  [4;35;1mSQL (5.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.3ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-i-item-11', 'feed-i', 'Feed i, Item 11 has a description', '2009-07-17 10:19:43')[0m
+  [4;36;1mSQL (4.8ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-j-item-11', 'feed-j', 'Feed j, Item 11 has a description', '2009-07-17 10:19:43')[0m
+  [4;35;1mSQL (4.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.5ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-a-item-12', 'feed-a', 'Feed a, Item 12 has a description', '2009-07-17 10:19:43')[0m
+  [4;36;1mSQL (4.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-b-item-12', 'feed-b', 'Feed b, Item 12 has a description', '2009-07-17 10:19:43')[0m
+  [4;35;1mSQL (4.8ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.4ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-c-item-12', 'feed-c', 'Feed c, Item 12 has a description', '2009-07-17 10:19:43')[0m
+  [4;36;1mSQL (4.8ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-d-item-12', 'feed-d', 'Feed d, Item 12 has a description', '2009-07-17 10:19:43')[0m
+  [4;35;1mSQL (4.9ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.3ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-e-item-12', 'feed-e', 'Feed e, Item 12 has a description', '2009-07-17 10:19:43')[0m
+  [4;36;1mSQL (4.8ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-f-item-12', 'feed-f', 'Feed f, Item 12 has a description', '2009-07-17 10:19:43')[0m
+  [4;35;1mSQL (4.9ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.3ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-g-item-12', 'feed-g', 'Feed g, Item 12 has a description', '2009-07-17 10:19:43')[0m
+  [4;36;1mSQL (4.2ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-h-item-12', 'feed-h', 'Feed h, Item 12 has a description', '2009-07-17 10:19:43')[0m
+  [4;35;1mSQL (4.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.3ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-i-item-12', 'feed-i', 'Feed i, Item 12 has a description', '2009-07-17 10:19:43')[0m
+  [4;36;1mSQL (4.7ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-j-item-12', 'feed-j', 'Feed j, Item 12 has a description', '2009-07-17 10:19:43')[0m
+  [4;35;1mSQL (4.9ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.3ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-a-item-13', 'feed-a', 'Feed a, Item 13 has a description', '2009-07-17 10:19:43')[0m
+  [4;36;1mSQL (4.9ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-b-item-13', 'feed-b', 'Feed b, Item 13 has a description', '2009-07-17 10:19:43')[0m
+  [4;35;1mSQL (4.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.3ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-c-item-13', 'feed-c', 'Feed c, Item 13 has a description', '2009-07-17 10:19:43')[0m
+  [4;36;1mSQL (4.9ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-d-item-13', 'feed-d', 'Feed d, Item 13 has a description', '2009-07-17 10:19:43')[0m
+  [4;35;1mSQL (4.9ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.3ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-e-item-13', 'feed-e', 'Feed e, Item 13 has a description', '2009-07-17 10:19:43')[0m
+  [4;36;1mSQL (5.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.4ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-f-item-13', 'feed-f', 'Feed f, Item 13 has a description', '2009-07-17 10:19:43')[0m
+  [4;35;1mSQL (4.8ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.3ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-g-item-13', 'feed-g', 'Feed g, Item 13 has a description', '2009-07-17 10:19:43')[0m
+  [4;36;1mSQL (4.9ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-h-item-13', 'feed-h', 'Feed h, Item 13 has a description', '2009-07-17 10:19:43')[0m
+  [4;35;1mSQL (4.9ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.3ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-i-item-13', 'feed-i', 'Feed i, Item 13 has a description', '2009-07-17 10:19:43')[0m
+  [4;36;1mSQL (4.2ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-j-item-13', 'feed-j', 'Feed j, Item 13 has a description', '2009-07-17 10:19:43')[0m
+  [4;35;1mSQL (4.8ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.3ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-a-item-14', 'feed-a', 'Feed a, Item 14 has a description', '2009-07-17 10:19:43')[0m
+  [4;36;1mSQL (4.8ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.4ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-b-item-14', 'feed-b', 'Feed b, Item 14 has a description', '2009-07-17 10:19:43')[0m
+  [4;35;1mSQL (4.8ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.7ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-c-item-14', 'feed-c', 'Feed c, Item 14 has a description', '2009-07-17 10:19:43')[0m
+  [4;36;1mSQL (4.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-d-item-14', 'feed-d', 'Feed d, Item 14 has a description', '2009-07-17 10:19:43')[0m
+  [4;35;1mSQL (4.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.3ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-e-item-14', 'feed-e', 'Feed e, Item 14 has a description', '2009-07-17 10:19:43')[0m
+  [4;36;1mSQL (4.6ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-f-item-14', 'feed-f', 'Feed f, Item 14 has a description', '2009-07-17 10:19:43')[0m
+  [4;35;1mSQL (4.8ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.3ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-g-item-14', 'feed-g', 'Feed g, Item 14 has a description', '2009-07-17 10:19:43')[0m
+  [4;36;1mSQL (5.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-h-item-14', 'feed-h', 'Feed h, Item 14 has a description', '2009-07-17 10:19:43')[0m
+  [4;35;1mSQL (4.8ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.3ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-i-item-14', 'feed-i', 'Feed i, Item 14 has a description', '2009-07-17 10:19:43')[0m
+  [4;36;1mSQL (4.8ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-j-item-14', 'feed-j', 'Feed j, Item 14 has a description', '2009-07-17 10:19:43')[0m
+  [4;35;1mSQL (4.9ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.3ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-a-item-15', 'feed-a', 'Feed a, Item 15 has a description', '2009-07-17 10:19:43')[0m
+  [4;36;1mSQL (4.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-b-item-15', 'feed-b', 'Feed b, Item 15 has a description', '2009-07-17 10:19:43')[0m
+  [4;35;1mSQL (4.7ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.3ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-c-item-15', 'feed-c', 'Feed c, Item 15 has a description', '2009-07-17 10:19:43')[0m
+  [4;36;1mSQL (4.8ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-d-item-15', 'feed-d', 'Feed d, Item 15 has a description', '2009-07-17 10:19:43')[0m
+  [4;35;1mSQL (5.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.3ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-e-item-15', 'feed-e', 'Feed e, Item 15 has a description', '2009-07-17 10:19:43')[0m
+  [4;36;1mSQL (4.8ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-f-item-15', 'feed-f', 'Feed f, Item 15 has a description', '2009-07-17 10:19:43')[0m
+  [4;35;1mSQL (4.2ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.3ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-g-item-15', 'feed-g', 'Feed g, Item 15 has a description', '2009-07-17 10:19:43')[0m
+  [4;36;1mSQL (4.8ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-h-item-15', 'feed-h', 'Feed h, Item 15 has a description', '2009-07-17 10:19:43')[0m
+  [4;35;1mSQL (4.9ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.4ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-i-item-15', 'feed-i', 'Feed i, Item 15 has a description', '2009-07-17 10:19:43')[0m
+  [4;36;1mSQL (4.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-j-item-15', 'feed-j', 'Feed j, Item 15 has a description', '2009-07-17 10:19:43')[0m
+  [4;35;1mSQL (4.9ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.3ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-a-item-16', 'feed-a', 'Feed a, Item 16 has a description', '2009-07-17 10:19:43')[0m
+  [4;36;1mSQL (4.8ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-b-item-16', 'feed-b', 'Feed b, Item 16 has a description', '2009-07-17 10:19:43')[0m
+  [4;35;1mSQL (4.8ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.3ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-c-item-16', 'feed-c', 'Feed c, Item 16 has a description', '2009-07-17 10:19:43')[0m
+  [4;36;1mSQL (4.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-d-item-16', 'feed-d', 'Feed d, Item 16 has a description', '2009-07-17 10:19:43')[0m
+  [4;35;1mSQL (4.9ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.3ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-e-item-16', 'feed-e', 'Feed e, Item 16 has a description', '2009-07-17 10:19:43')[0m
+  [4;36;1mSQL (4.8ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-f-item-16', 'feed-f', 'Feed f, Item 16 has a description', '2009-07-17 10:19:43')[0m
+  [4;35;1mSQL (4.9ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.3ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-g-item-16', 'feed-g', 'Feed g, Item 16 has a description', '2009-07-17 10:19:43')[0m
+  [4;36;1mSQL (4.7ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-h-item-16', 'feed-h', 'Feed h, Item 16 has a description', '2009-07-17 10:19:43')[0m
+  [4;35;1mSQL (4.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.3ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-i-item-16', 'feed-i', 'Feed i, Item 16 has a description', '2009-07-17 10:19:43')[0m
+  [4;36;1mSQL (4.6ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:43', 'feed-j-item-16', 'feed-j', 'Feed j, Item 16 has a description', '2009-07-17 10:19:43')[0m
+  [4;35;1mSQL (4.9ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (1.1ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:44', 'feed-a-item-17', 'feed-a', 'Feed a, Item 17 has a description', '2009-07-17 10:19:44')[0m
+  [4;36;1mSQL (4.2ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:44', 'feed-b-item-17', 'feed-b', 'Feed b, Item 17 has a description', '2009-07-17 10:19:44')[0m
+  [4;35;1mSQL (4.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.3ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:44', 'feed-c-item-17', 'feed-c', 'Feed c, Item 17 has a description', '2009-07-17 10:19:44')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:44', 'feed-d-item-17', 'feed-d', 'Feed d, Item 17 has a description', '2009-07-17 10:19:44')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.3ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:44', 'feed-e-item-17', 'feed-e', 'Feed e, Item 17 has a description', '2009-07-17 10:19:44')[0m
+  [4;36;1mSQL (4.8ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:44', 'feed-f-item-17', 'feed-f', 'Feed f, Item 17 has a description', '2009-07-17 10:19:44')[0m
+  [4;35;1mSQL (4.7ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.3ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:44', 'feed-g-item-17', 'feed-g', 'Feed g, Item 17 has a description', '2009-07-17 10:19:44')[0m
+  [4;36;1mSQL (4.7ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:44', 'feed-h-item-17', 'feed-h', 'Feed h, Item 17 has a description', '2009-07-17 10:19:44')[0m
+  [4;35;1mSQL (4.8ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.3ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:44', 'feed-i-item-17', 'feed-i', 'Feed i, Item 17 has a description', '2009-07-17 10:19:44')[0m
+  [4;36;1mSQL (4.9ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:44', 'feed-j-item-17', 'feed-j', 'Feed j, Item 17 has a description', '2009-07-17 10:19:44')[0m
+  [4;35;1mSQL (4.7ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.3ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:44', 'feed-a-item-18', 'feed-a', 'Feed a, Item 18 has a description', '2009-07-17 10:19:44')[0m
+  [4;36;1mSQL (3.9ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:44', 'feed-b-item-18', 'feed-b', 'Feed b, Item 18 has a description', '2009-07-17 10:19:44')[0m
+  [4;35;1mSQL (4.8ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.3ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:44', 'feed-c-item-18', 'feed-c', 'Feed c, Item 18 has a description', '2009-07-17 10:19:44')[0m
+  [4;36;1mSQL (4.6ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:44', 'feed-d-item-18', 'feed-d', 'Feed d, Item 18 has a description', '2009-07-17 10:19:44')[0m
+  [4;35;1mSQL (4.9ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.3ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:44', 'feed-e-item-18', 'feed-e', 'Feed e, Item 18 has a description', '2009-07-17 10:19:44')[0m
+  [4;36;1mSQL (4.7ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:44', 'feed-f-item-18', 'feed-f', 'Feed f, Item 18 has a description', '2009-07-17 10:19:44')[0m
+  [4;35;1mSQL (4.7ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.3ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:44', 'feed-g-item-18', 'feed-g', 'Feed g, Item 18 has a description', '2009-07-17 10:19:44')[0m
+  [4;36;1mSQL (5.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.4ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:44', 'feed-h-item-18', 'feed-h', 'Feed h, Item 18 has a description', '2009-07-17 10:19:44')[0m
+  [4;35;1mSQL (2.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (2.9ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.3ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:44', 'feed-i-item-18', 'feed-i', 'Feed i, Item 18 has a description', '2009-07-17 10:19:44')[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:44', 'feed-j-item-18', 'feed-j', 'Feed j, Item 18 has a description', '2009-07-17 10:19:44')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.3ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:44', 'feed-a-item-19', 'feed-a', 'Feed a, Item 19 has a description', '2009-07-17 10:19:44')[0m
+  [4;36;1mSQL (7.8ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:44', 'feed-b-item-19', 'feed-b', 'Feed b, Item 19 has a description', '2009-07-17 10:19:44')[0m
+  [4;35;1mSQL (4.7ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.3ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:44', 'feed-c-item-19', 'feed-c', 'Feed c, Item 19 has a description', '2009-07-17 10:19:44')[0m
+  [4;36;1mSQL (4.2ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:44', 'feed-d-item-19', 'feed-d', 'Feed d, Item 19 has a description', '2009-07-17 10:19:44')[0m
+  [4;35;1mSQL (4.8ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.3ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:44', 'feed-e-item-19', 'feed-e', 'Feed e, Item 19 has a description', '2009-07-17 10:19:44')[0m
+  [4;36;1mSQL (4.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:44', 'feed-f-item-19', 'feed-f', 'Feed f, Item 19 has a description', '2009-07-17 10:19:44')[0m
+  [4;35;1mSQL (4.7ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.3ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:44', 'feed-g-item-19', 'feed-g', 'Feed g, Item 19 has a description', '2009-07-17 10:19:44')[0m
+  [4;36;1mSQL (4.7ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:44', 'feed-h-item-19', 'feed-h', 'Feed h, Item 19 has a description', '2009-07-17 10:19:44')[0m
+  [4;35;1mSQL (4.8ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.3ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:44', 'feed-i-item-19', 'feed-i', 'Feed i, Item 19 has a description', '2009-07-17 10:19:44')[0m
+  [4;36;1mSQL (4.9ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.7ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:44', 'feed-j-item-19', 'feed-j', 'Feed j, Item 19 has a description', '2009-07-17 10:19:44')[0m
+  [4;35;1mSQL (4.2ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.3ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:44', 'feed-a-item-20', 'feed-a', 'Feed a, Item 20 has a description', '2009-07-17 10:19:44')[0m
+  [4;36;1mSQL (4.8ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:44', 'feed-b-item-20', 'feed-b', 'Feed b, Item 20 has a description', '2009-07-17 10:19:44')[0m
+  [4;35;1mSQL (4.8ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.4ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:44', 'feed-c-item-20', 'feed-c', 'Feed c, Item 20 has a description', '2009-07-17 10:19:44')[0m
+  [4;36;1mSQL (4.7ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:44', 'feed-d-item-20', 'feed-d', 'Feed d, Item 20 has a description', '2009-07-17 10:19:44')[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.3ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:44', 'feed-e-item-20', 'feed-e', 'Feed e, Item 20 has a description', '2009-07-17 10:19:44')[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:44', 'feed-f-item-20', 'feed-f', 'Feed f, Item 20 has a description', '2009-07-17 10:19:44')[0m
+  [4;35;1mSQL (4.8ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.3ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:44', 'feed-g-item-20', 'feed-g', 'Feed g, Item 20 has a description', '2009-07-17 10:19:44')[0m
+  [4;36;1mSQL (4.7ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:44', 'feed-h-item-20', 'feed-h', 'Feed h, Item 20 has a description', '2009-07-17 10:19:44')[0m
+  [4;35;1mSQL (4.8ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeedItem Create (0.3ms)[0m   [0mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:44', 'feed-i-item-20', 'feed-i', 'Feed i, Item 20 has a description', '2009-07-17 10:19:44')[0m
+  [4;36;1mSQL (3.9ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mFeedItem Create (0.3ms)[0m   [0;1mINSERT INTO `feed_items` (`updated_at`, `title`, `feed_name`, `description`, `created_at`) VALUES('2009-07-17 10:19:44', 'feed-j-item-20', 'feed-j', 'Feed j, Item 20 has a description', '2009-07-17 10:19:44')[0m
+  [4;35;1mSQL (3.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (7.9ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090717095948')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW FIELDS FROM `feed_items`[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mdescribe `feed_items`[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW KEYS FROM `feed_items`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing FeedController#index (for 127.0.0.1 at 2009-07-17 11:53:48) [GET]
+
+NameError (undefined local variable or method `all' for #<FeedController:0xb75b1b7c>):
+  app/controllers/feed_controller.rb:3:in `index'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (75.2ms)
+Rendered rescues/_request_and_response (17.1ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing FeedController#index (for 127.0.0.1 at 2009-07-17 11:54:04) [GET]
+  [4;36;1mFeedItem Load (0.7ms)[0m   [0;1mSELECT DISTINCT feed_name FROM `feed_items` [0m
+Rendering feed/index
+  [4;35;1mFeedItem Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `feed_items`[0m
+Completed in 28ms (View: 16, DB: 2) | 200 OK [http://localhost/feed/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing FeedController#show (for 127.0.0.1 at 2009-07-17 11:54:16) [GET]
+  Parameters: {"id"=>"feed-a"}
+  [4;36;1mFeedItem Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `feed_items`[0m
+  [4;35;1mFeedItem Load (16.8ms)[0m   [0mSELECT * FROM `feed_items` WHERE (`feed_items`.`feed_name` IS NULL) [0m
+Rendering feed/show
+Completed in 128ms (View: 7, DB: 18) | 200 OK [http://localhost/feed/show/feed-a]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing FeedController#show (for 127.0.0.1 at 2009-07-17 11:54:24) [GET]
+  Parameters: {"id"=>"feed-b"}
+  [4;36;1mFeedItem Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `feed_items`[0m
+  [4;35;1mFeedItem Load (0.1ms)[0m   [0mSELECT * FROM `feed_items` WHERE (`feed_items`.`feed_name` IS NULL) [0m
+Rendering feed/show
+Completed in 14ms (View: 1, DB: 2) | 200 OK [http://localhost/feed/show/feed-b]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing FeedController#feed-b (for 127.0.0.1 at 2009-07-17 11:54:50) [GET]
+
+ActionController::UnknownAction (No action responded to feed-b. Actions: index, show, and update):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing FeedController#show (for 127.0.0.1 at 2009-07-17 11:54:58) [GET]
+  Parameters: {"id"=>"feed-b"}
+  [4;36;1mFeedItem Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `feed_items`[0m
+  [4;35;1mFeedItem Load (0.1ms)[0m   [0mSELECT * FROM `feed_items` WHERE (`feed_items`.`feed_name` IS NULL) [0m
+Rendering feed/show
+Completed in 14ms (View: 1, DB: 1) | 200 OK [http://localhost/feed/show/feed-b]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing FeedController#show (for 127.0.0.1 at 2009-07-17 11:55:30) [GET]
+  Parameters: {"id"=>"feed-b"}
+  [4;36;1mFeedItem Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `feed_items`[0m
+  [4;35;1mFeedItem Load (0.9ms)[0m   [0mSELECT * FROM `feed_items` WHERE (`feed_items`.`feed_name` = 'feed-b') [0m
+Rendering feed/show
+Completed in 42ms (View: 4, DB: 2) | 200 OK [http://localhost/feed/show/feed-b]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing FeedController#show (for 127.0.0.1 at 2009-07-17 11:55:57) [GET]
+  Parameters: {"id"=>"feed-b"}
+  [4;36;1mFeedItem Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `feed_items`[0m
+  [4;35;1mFeedItem Load (0.2ms)[0m   [0mSELECT * FROM `feed_items` WHERE (`feed_items`.`feed_name` = 'feed-b') [0m
+Rendering feed/show
+Completed in 22ms (View: 9, DB: 1) | 200 OK [http://localhost/feed/show/feed-b]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing FeedController#show (for 127.0.0.1 at 2009-07-17 11:56:01) [GET]
+  Parameters: {"id"=>"feed-c"}
+  [4;36;1mFeedItem Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `feed_items`[0m
+  [4;35;1mFeedItem Load (0.8ms)[0m   [0mSELECT * FROM `feed_items` WHERE (`feed_items`.`feed_name` = 'feed-c') [0m
+Rendering feed/show
+Completed in 17ms (View: 4, DB: 2) | 200 OK [http://localhost/feed/show/feed-c]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing FeedController#show (for 127.0.0.1 at 2009-07-17 11:56:05) [GET]
+  Parameters: {"id"=>"feed-a"}
+  [4;36;1mFeedItem Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `feed_items`[0m
+  [4;35;1mFeedItem Load (0.8ms)[0m   [0mSELECT * FROM `feed_items` WHERE (`feed_items`.`feed_name` = 'feed-a') [0m
+Rendering feed/show
+Completed in 18ms (View: 3, DB: 2) | 200 OK [http://localhost/feed/show/feed-a]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing FeedController#index (for 127.0.0.1 at 2009-07-17 11:56:09) [GET]
+  [4;36;1mFeedItem Load (0.2ms)[0m   [0;1mSELECT DISTINCT feed_name FROM `feed_items` [0m
+Rendering feed/index
+  [4;35;1mFeedItem Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `feed_items`[0m
+Completed in 15ms (View: 5, DB: 2) | 200 OK [http://localhost/feed/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing FeedController#index (for 127.0.0.1 at 2009-07-17 11:56:32) [GET]
+  [4;36;1mFeedItem Load (0.2ms)[0m   [0;1mSELECT DISTINCT feed_name FROM `feed_items` [0m
+Rendering feed/index
+  [4;35;1mFeedItem Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `feed_items`[0m
+Completed in 21ms (View: 9, DB: 1) | 200 OK [http://localhost/feed/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing FeedController#show (for 127.0.0.1 at 2009-07-17 11:56:37) [GET]
+  Parameters: {"id"=>"feed-a"}
+  [4;36;1mFeedItem Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `feed_items`[0m
+  [4;35;1mFeedItem Load (0.2ms)[0m   [0mSELECT * FROM `feed_items` WHERE (`feed_items`.`feed_name` = 'feed-a') [0m
+Rendering feed/show
+Completed in 22ms (View: 9, DB: 2) | 200 OK [http://localhost/feed/show/feed-a]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing FeedController#show (for 127.0.0.1 at 2009-07-17 11:57:08) [GET]
+  Parameters: {"id"=>"feed-a"}
+  [4;36;1mFeedItem Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `feed_items`[0m
+  [4;35;1mFeedItem Load (0.2ms)[0m   [0mSELECT * FROM `feed_items` WHERE (`feed_items`.`feed_name` = 'feed-a') [0m
+Rendering feed/show
+Completed in 22ms (View: 9, DB: 1) | 200 OK [http://localhost/feed/show/feed-a]

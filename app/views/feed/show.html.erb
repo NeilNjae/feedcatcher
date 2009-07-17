@@ -1,0 +1,7 @@
+<h1>Contents of feed <%= params[:id] %></h1>
+<dl>
+  <% for item in @feed_items %>
+    <dt><%= h item.title %></dt>
+    <dd><em><%= h item.description %></em></dd>
+  <% end %>
+</dl>
