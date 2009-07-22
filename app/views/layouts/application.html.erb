@@ -1,8 +1,12 @@
 <html>
   <head>
     <title>Feedcatcher</title>
+    <%= stylesheet_link_tag "feedcatcher", :media => :all %>
   </head>
   <body>
+    <% if flash[:notice] -%>
+      <div id="notice"><%= flash[:notice] %></div>
+    <% end -%>
     <%= yield :layout %>
   </body>
 </html>
