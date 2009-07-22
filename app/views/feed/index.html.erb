@@ -9,6 +9,6 @@
 
 <ul>
 <% for feed in @feeds %>
-  <li><%= link_to(h(feed.feed_name), (feed_url(:feed_name => feed.feed_name))) %></li>
+  <li><%= link_to( h(feed.feed_name), (feed_url(:feed_name => feed.feed_name))) %></li>
 <% end %>
 </ul>
