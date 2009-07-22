@@ -1,0 +1,17 @@
+<h1>Contents of feed <%= h params[:feed_name] %></h1>
+<p><%= link_to("List of all feeds", index_url) %></p>
+
+<% form_tag :action => 'update' do %>
+  <p>Set feed <%= text_field_tag :new_feed_name, h(params[:feed_name]), :size => 20 %>
+    to include <%= text_field_tag :title, '', :size => 30 %>
+    containing  <%= text_field_tag :description, '', :size => 50 %>
+    <%= submit_tag 'Update' %></p>
+<% end %>
+
+
+<dl>
+  <% for item in @feed_items %>
+    <dt><%= h item.title %></dt>
+    <dd><em><%= h item.description %></em></dd>
+  <% end %>
+</dl>
