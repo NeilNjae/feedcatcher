@@ -1,9 +1,10 @@
-# index.rss.builder
+# show.rss.builder
 xml.instruct! :xml, :version => "1.0"
 xml.rss :version => "2.0" do
   xml.channel do
     xml.title @feed_name
     xml.link feed_url(@feed_name, :rss)
+    xml.description "The #{h @feed_name} feed"
 
     for item in @feed_items
       xml.item do

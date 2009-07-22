@@ -36,8 +36,8 @@ class FeedController < ApplicationController
 
 
   def update
-    if valid_feed_name?(params[:new_feed_name])
-      item = FeedItem.find_by_feed_name_and_title(params[:new_feed_name], params[:title])
+    if valid_feed_name?(params[:feed_name])
+      item = FeedItem.find_by_feed_name_and_title(params[:feed_name], params[:title])
       if item
         if params[:description] == ''
           destroy_item(item)
@@ -70,19 +70,19 @@ class FeedController < ApplicationController
 
 
   def create_item
-    item = FeedItem.new(:feed_name => params[:new_feed_name],
+    item = FeedItem.new(:feed_name => params[:feed_name],
       :title => params[:title],
       :description => params[:description])
     item.save!
     flash[:notice] = "Element #{params[:title]} created"
     respond_to do |format|
-      format.html { redirect_to feed_url(params[:new_feed_name]) }
+      format.html { redirect_to feed_url(params[:feed_name]) }
       format.rss  { head :ok }
     end
   rescue ActiveRecord::RecordInvalid => error
     flash[:notice] = "Element #{params[:title]} could not be created"
     respond_to do |format|
-      format.html { redirect_to feed_url(params[:new_feed_name]) }
+      format.html { redirect_to feed_url(params[:feed_name]) }
       format.rss  { head :unprocessable_entity }
     end
   end
@@ -92,13 +92,13 @@ class FeedController < ApplicationController
     if item.update_attribute(:description, params[:description])
       flash[:notice] = "Element #{params[:title]} updated"
       respond_to do |format|
-        format.html { redirect_to feed_url(params[:new_feed_name]) }
+        format.html { redirect_to feed_url(params[:feed_name]) }
         format.rss  { head :ok }
       end
     else
       flash[:notice] = "Element #{params[:title]} could not be updated"
       respond_to do |format|
-        format.html { redirect_to feed_url(params[:new_feed_name]) }
+        format.html { redirect_to feed_url(params[:feed_name]) }
         format.rss  { head :unprocessable_entity }
       end
     end
@@ -109,13 +109,13 @@ class FeedController < ApplicationController
     if item.destroy
       flash[:notice] = "Element #{params[:title]} destroyed"
       respond_to do |format|
-        format.html { redirect_to feed_url(params[:new_feed_name]) }
+        format.html { redirect_to feed_url(params[:feed_name]) }
         format.rss  { head :ok }
       end
     else
       flash[:notice] = "Element #{params[:title]} could not be destroyed"
       respond_to do |format|
-        format.html { redirect_to feed_url(params[:new_feed_name]) }
+        format.html { redirect_to feed_url(params[:feed_name]) }
         format.rss  { head :unprocessable_entity }
       end
     end

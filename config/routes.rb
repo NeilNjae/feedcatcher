@@ -38,9 +38,9 @@ ActionController::Routing::Routes.draw do |map|
     :conditions => { :method => :get },
     :controller => 'feed',
     :action => 'show'
-  map.update ':feed_name',
+  map.update ':ignored',
     :conditions => { :method => :post },
-    :defaults => { :feed_name => nil },
+    :defaults => { :ignored => nil },
     :controller => 'feed',
     :action => 'update'
 

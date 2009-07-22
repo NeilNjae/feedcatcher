@@ -1,7 +1,7 @@
 <h1>Feeds available</h1>
 
 <% form_tag :action => 'update' do %>
-  <p>Set feed <%= text_field_tag :new_feed_name, '', :size => 20 %>
+  <p>Set feed <%= text_field_tag :feed_name, '', :size => 20 %>
     to include <%= text_field_tag :title, '', :size => 30 %>
     containing  <%= text_field_tag :description, '', :size => 50 %>
     <%= submit_tag 'Update' %></p>
