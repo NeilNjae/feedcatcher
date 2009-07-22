@@ -5,7 +5,7 @@ class FeedItem < ActiveRecord::Base
   validates_presence_of :feed_name, :title, :description
   validate :feed_name_must_be_legal
 
-protected
+private
 
   def feed_name_must_be_legal
     if Rack::Utils::escape(feed_name) != feed_name or
