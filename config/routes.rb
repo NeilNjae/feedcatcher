@@ -38,11 +38,15 @@ ActionController::Routing::Routes.draw do |map|
     :conditions => { :method => :get },
     :controller => 'feed',
     :action => 'show'
-  map.update ':ignored',
+  map.update '*ignored',
     :conditions => { :method => :post },
-    :defaults => { :ignored => nil },
+    #:defaults => { :ignored => nil },
     :controller => 'feed',
     :action => 'update'
+
+  map.connect '*ignored',
+    :controller => 'feed',
+    :action => 'index'
 
   # You can have the root of your site routed with map.root -- just remember to delete public/index.html.
   map.root :controller => "feed"
