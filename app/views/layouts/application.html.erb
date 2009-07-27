@@ -5,7 +5,7 @@
   </head>
   <body>
     <% if flash[:notice] -%>
-      <div id="notice"><%= flash[:notice] %></div>
+      <div id="notice"><%= h flash[:notice] %></div>
     <% end -%>
     <%= yield :layout %>
   </body>
