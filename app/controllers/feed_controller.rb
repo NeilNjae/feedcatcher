@@ -12,7 +12,7 @@ class FeedController < ApplicationController
 
   
   def show
-    if valid_feed_name?(params[:feed_name])
+    if FeedItem::valid_feed_name?(params[:feed_name])
       @feed_items = FeedItem.find_all_by_feed_name(params[:feed_name])
       @feed_name = params[:feed_name]
       respond_to do |format|
@@ -36,7 +36,7 @@ class FeedController < ApplicationController
 
 
   def update
-    if valid_feed_name?(params[:feed_name])
+    if FeedItem::valid_feed_name?(params[:feed_name])
       item = FeedItem.find_by_feed_name_and_title(params[:feed_name], params[:title])
       if item
         if params[:description] == ''
@@ -58,15 +58,6 @@ class FeedController < ApplicationController
   
 
   private
-
-  def valid_feed_name?(feed_name)
-    Rack::Utils::escape(feed_name) == feed_name and
-      Rack::Utils::unescape(feed_name) == feed_name and
-      feed_name != 'index' and
-      feed_name != 'show' and
-      feed_name != 'update' and
-      feed_name != 'action'
-  end
 
 
   def create_item
@@ -107,13 +98,13 @@ class FeedController < ApplicationController
 
   def destroy_item(item)
     if item.destroy
-      flash[:notice] = "Element #{params[:title]} destroyed"
+      flash[:notice] = "Element #{params[:title]} deleted"
       respond_to do |format|
         format.html { redirect_to feed_url(params[:feed_name]) }
         format.rss  { head :ok }
       end
     else
-      flash[:notice] = "Element #{params[:title]} could not be destroyed"
+      flash[:notice] = "Element #{params[:title]} could not be deleted"
       respond_to do |format|
         format.html { redirect_to feed_url(params[:feed_name]) }
         format.rss  { head :unprocessable_entity }
