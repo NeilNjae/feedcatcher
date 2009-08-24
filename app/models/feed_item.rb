@@ -3,6 +3,7 @@ class FeedItem < ActiveRecord::Base
   # require 'cgi' # needed for url decoding
 
   validates_presence_of :feed_name, :title, :description
+  validates_uniqueness_of :title, :scope => :feed_name
   validate :feed_name_must_be_legal
 
   def FeedItem.valid_feed_name?(feed_name)

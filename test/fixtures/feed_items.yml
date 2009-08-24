@@ -1,11 +1,27 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  feed_name: MyString
-  title: MyString
-  description: MyText
+feed_one_item_one:
+    feed_name: feed_one
+    title: feed one item one
+    description: feed one item one description
 
-two:
-  feed_name: MyString
-  title: MyString
-  description: MyText
+feed_one_item_two:
+    feed_name: feed_one
+    title: feed one item two
+    description: feed one item two description
+
+feed_one_item_three:
+    feed_name: feed_one
+    title: feed one item three
+    description: feed one item three description
+
+feed_two_item_one:
+    feed_name: feed_two
+    title: feed two item one
+    description: feed two item one description
+
+feed_two_item_two:
+    feed_name: feed_two
+    title: feed two item two
+    description: feed two item two description
+    
