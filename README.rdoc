@@ -1,0 +1,67 @@
+== Welcome to Feedcatcher
+
+Feedcatcher is a lightweight RSS server that accepts write requests from anonymous clients. It was developed for the {Sense programming environment}[http://sense.open.ac.uk].
+
+Feedcatcher was the first version of the RSS server. It has since been reimplemented, more robustly, but the {Open University}[http://www.open.ac.uk] for use in the {My Digital Life module}[http://www3.open.ac.uk/study/undergraduate/course/tu100.htm].
+
+Feel free to clone and modify this application.
+
+== Installation
+
+Feedcatcher is written in Rails 2.3.2 (vendored in) and runs on Ruby 1.8.7. I've not tried it with later versions of Ruby or Rails. Updating Ruby should be OK, but changing to Rails 3.x will probably break things.
+
+You'll need to update the +deploy.rb+ file to wherever you're installing from and to. 
+
+== Instructions
+
+Visiting http://feedcatcher.example.com in a browser will give you an HTML view of the feeds available.  
+
+Visiting http://feedcatcher.example.com/feed-a or http://feedcatcher.example.com/feed-a.html will show you the contents of that feed. The HTML pages also have a little form to allow you to update the contents of feeds.
+
+Asking the server for RSS content will give you RSS content.  That's most easily done with cURL.
+
+These give you HTML:
+ curl http://feedcatcher.example.com/
+ curl http://feedcatcher.example.com/index
+ curl http://feedcatcher.example.com/index.html
+
+These all give you RSS:
+ curl -H "Accept: application/rss+xml" http://feedcatcher.example.com/ 
+ curl -H "Accept: application/rss+xml" http://feedcatcher.example.com/index
+ curl -H "Accept: application/rss+xml" http://feedcatcher.example.com/index.rss
+ curl http://feedcatcher.example.com/index.rss
+
+These give you a feed:
+ curl -H "Accept: application/rss+xml" http://feedcatcher.example.com/test1
+ curl -H "Accept: application/rss+xml" http://feedcatcher.example.com/test1.rss
+ curl http://feedcatcher.example.com/test1.rss
+
+These give you the same feed but as HTML:
+ curl http://feedcatcher.example.com/test1
+ curl http://feedcatcher.example.com/test1.html
+
+This generates a 404 error:
+ curl -H "Accept: application/rss+xml" -D headers.txt \ http://feedcatcher.example.com/test%2099
+('test 99' is not a valid feed name)
+(the -D saves the HTTP response header into the given file, so you can see it)
+
+This creates (or updates) a feed item:
+ curl -D headers.txt -H "Accept: application/rss+xml" \
+  --data-urlencode "feed_name=test5" \
+  --data-urlencode "title=test 5 item 2" \
+  --data-urlencode "description=updated content"' \
+  -d "commit=Update" \
+ http://feedcatcher.example.com
+
+This deletes an item:
+ curl -D headers.txt -H "Accept: application/rss+xml" \
+  --data-urlencode "feed_name=test5" \
+  --data-urlencode "title=test 5 item 2" \
+  --data-urlencode 'description=' \
+  -d "commit=Update" \
+  http://feedcatcher.example.com
+
+===Notes
+
+When you ask for HTML pages, the responses are likely to be redirects to the next page.  You shouldn't get HTTP error codes.
+Responses to POSTs made with "Accept: application/rss+xml" headers will often be empty, with the success or failure of the action indicated in the HTTP response code.
