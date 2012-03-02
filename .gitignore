@@ -1,6 +1,7 @@
 *~
 *log
 database.yml
+deploy.rb
 *doc
 tmp/*
 
