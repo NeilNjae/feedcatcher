@@ -2,9 +2,9 @@
 
 Feedcatcher is a lightweight RSS server that accepts write requests from anonymous clients. It was developed for the {Sense programming environment}[http://sense.open.ac.uk].
 
-Feedcatcher was the first version of the RSS server. It has since been reimplemented, more robustly, but the {Open University}[http://www.open.ac.uk] for use in the {My Digital Life module}[http://www3.open.ac.uk/study/undergraduate/course/tu100.htm].
+Feedcatcher was the first version of the RSS server. It has since been reimplemented, more robustly, by the {Open University}[http://www.open.ac.uk] for use in the {My Digital Life module}[http://www3.open.ac.uk/study/undergraduate/course/tu100.htm]. However, this version should still work with Sense. It's not been tested with the very latest versions, but nothing in that part of Sense has changed since it used this implementation of Feedcatcher.
 
-Feel free to clone and modify this application.
+Feel free to clone and modify this application. Let me know what you do with it!
 
 == Installation
 
