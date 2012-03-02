@@ -10,7 +10,7 @@ Feel free to clone and modify this application.
 
 Feedcatcher is written in Rails 2.3.2 (vendored in) and runs on Ruby 1.8.7. I've not tried it with later versions of Ruby or Rails. Updating Ruby should be OK, but changing to Rails 3.x will probably break things.
 
-You'll need to update the +deploy.rb+ file to wherever you're installing from and to. 
+You'll need to update the create the +database.yml+ and +deploy.rb+ files for your installation. You can use the +database.sample.yml+ and +deploy.sample.rb+ files as templates. In particular, +deploy.sample.rb+ still refers to when feedcatcher was stored in a Subversion repository.
 
 == Instructions
 
