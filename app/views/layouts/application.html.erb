@@ -1,12 +1,14 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <title>Feedcatcher</title>
-    <%= stylesheet_link_tag "feedcatcher", :media => :all %>
-  </head>
-  <body>
-    <% if flash[:notice] -%>
-      <div id="notice"><%= h flash[:notice] %></div>
-    <% end -%>
-    <%= yield :layout %>
-  </body>
+<head>
+  <title>Feedcatcher</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= yield %>
+
+</body>
 </html>
