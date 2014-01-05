@@ -39,7 +39,19 @@ end
 # gem 'unicorn'
 
 # Use Capistrano for deployment
-# gem 'capistrano', group: :development
+gem 'capistrano', group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+group :development, :test do
+  gem "rspec-rails"
+end
+
+group :test do
+  gem "factory_girl_rails"
+  gem "cucumber-rails", :require => false
+  gem "capybara"
+  gem "database_cleaner"
+  gem "launchy"
+end
