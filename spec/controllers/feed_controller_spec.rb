@@ -1,14 +1,6 @@
 require 'spec_helper'
 
-describe FeedController do
-#   describe "POST create" do
-#     let (:feed_item1) { mock_model(FeedItem).as_null_object }
-#     
-#     before do
-#       FeedItem.stub(:new).and_return(feed_item)
-#     end
-#   end
-    
+describe FeedController do    
   describe "GET #index" do
     let!(:feed_item1) { FactoryGirl.create(:feed_item, feed_name: "feed1") }
     let!(:feed_item2) { FactoryGirl.create(:feed_item, feed_name: "feed2") }
@@ -69,36 +61,8 @@ describe FeedController do
     
     it "redirects an update the feed path" do
       post :update, FactoryGirl.attributes_for(:feed_item, 
-	                title: "item 1", description: "New description")
+                title: "item 1", description: "New description")
       expect(response).to redirect_to(feed_path("test_feed"))
     end
-    
   end
-  
-  
 end
-
-
-# describe MessagesController do
-# describe "POST create" do
-# let(:message) { mock_model(Message).as_null_object }
-# before do
-# Message.stub(:new).and_return(message)
-# end
-# it "creates a new message" do
-# Message.should_receive(:new).
-# with("text" => "a quick brown fox").
-# and_return(message)
-# post :create, :message => { "text" => "a quick brown fox" }
-# end
-# it "saves the message" do
-# message.should_receive(:save)
-# post :create
-# end
-# it "redirects to the Messages index" do
-# post :create
-# response.should redirect_to(:action => "index")
-# end
-# end
-# end
-# 
