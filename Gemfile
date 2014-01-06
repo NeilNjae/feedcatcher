@@ -46,12 +46,5 @@ gem 'capistrano', group: :development
 
 group :development, :test do
   gem "rspec-rails"
-end
-
-group :test do
   gem "factory_girl_rails"
-  gem "cucumber-rails", :require => false
-  gem "capybara"
-  gem "database_cleaner"
-  gem "launchy"
 end
