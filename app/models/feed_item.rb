@@ -1,4 +1,13 @@
 class FeedItem < ActiveRecord::Base
+  
+  def self.in_feed(name)
+    where('feed_name = ?', name)
+  end
+  
+  def self.entitled(title)
+    where('title = ?', title)
+  end
+  
   validates_presence_of :feed_name, :title, :description
   validates_uniqueness_of :title, :scope => :feed_name
   validate :feed_name_must_be_legal

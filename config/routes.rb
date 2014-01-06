@@ -4,6 +4,11 @@ Feedcatcher::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
+  root 'feed#index'
+  
+  get 'index', to: 'feed#index', as: :index
+  get ':feed_name', to: 'feed#show', as: :feed
+  post '*ignored', to: 'feed#update', as: :update
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
