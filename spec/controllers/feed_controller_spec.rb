@@ -31,8 +31,10 @@ describe FeedController do
   end
 
   describe "GET #feed" do
-    let!(:feed_item1) { FactoryGirl.create(:feed_item, feed_name: "test_feed", title: "item 1") }
-    let!(:feed_item2) { FactoryGirl.create(:feed_item, feed_name: "test_feed", title: "item 2") }
+    let!(:feed_item1) { FactoryGirl.create(:feed_item, 
+      feed_name: "test_feed", title: "item 1") }
+    let!(:feed_item2) { FactoryGirl.create(:feed_item, 
+      feed_name: "test_feed", title: "item 2") }
     
     it "redirects an emtpy feed to the index" do
       get :show, feed_name: "empty_feed"
@@ -54,6 +56,23 @@ describe FeedController do
       get :show, feed_name: "test_feed"
       expect(assigns(:feed_items)).to match_array([feed_item1, feed_item2])
     end
+  end
+
+
+  describe "POST #feed" do
+    let!(:feed_item1) { FactoryGirl.create(:feed_item, 
+      title: "item 1") }
+    let!(:feed_item2) { FactoryGirl.create(:feed_item, 
+      title: "item 2") }
+    let!(:other_feed_item) { FactoryGirl.create(:feed_item, 
+      feed_name: "other_test_feed", title: "item") }
+    
+    it "redirects an update the feed path" do
+      post :update, FactoryGirl.attributes_for(:feed_item, 
+	                title: "item 1", description: "New description")
+      expect(response).to redirect_to(feed_path("test_feed"))
+    end
+    
   end
   
   
