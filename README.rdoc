@@ -8,7 +8,7 @@ Feel free to clone and modify this application. Let me know what you do with it!
 == Installation
 Feedcatcher is written in Rails 4.0.2 and runs on Ruby 2.1.0. 
 
-You'll need to update the create the +database.yml+ and +deploy.rb+ files for your installation. You can use the +database.sample.yml+ and +deploy.sample.rb+ files as templates. In particular, +deploy.sample.rb+ still refers to when feedcatcher was stored in a Subversion repository.
+You'll need to update the create the +database.yml+ and +deploy.rb+ files for your installation. You can use the +database.sample.yml+ and +deploy.sample.rb+ files as templates. 
 
 == Instructions
 Visiting http://feedcatcher.example.com in a browser will give you an HTML view of the feeds available.  
