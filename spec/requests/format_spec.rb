@@ -8,51 +8,54 @@ describe "format" do
   let!(:other_feed_item) { FactoryGirl.create(:feed_item, 
       feed_name: "other_test_feed") }
 
-  it "changes the description of an existing item" do
-    post_via_redirect '', 
-      FactoryGirl.attributes_for(:feed_item, 
-              title: "item 1", description: "New description")
-    expect(assigns(:feed_items).map{|f| f.description}).to include("New description")
-    expect(assigns(:feed_items).length).to eq(2)
-    get '/index'
-    expect(assigns(:feeds).length).to eq(2)
+  it "serves index as html by default" do
+    get_via_redirect '/index'
+    expect(response.header['Content-Type']).to include('text/html')
+  end
+
+  it "serves index.html as html" do
+    get_via_redirect '/index.html'
+    expect(response.header['Content-Type']).to include('text/html')
+  end
+
+  it "serves index.rss as rss" do
+    get_via_redirect '/index.rss'
+    expect(response.header['Content-Type']).to include('application/rss+xml')
   end
   
-  it "adds the item when inserting a new title into an existing feed" do
-    post_via_redirect '', 
-      FactoryGirl.attributes_for(:feed_item, title: "item 99", 
-                                 description: "New description")
-    expect(assigns(:feed_items).map{|f| f.description}).to include("New description")
-    expect(assigns(:feed_items).length).to eq(3)
-    get '/index'
-    expect(assigns(:feeds).length).to eq(2)
+  it "serves index as html with the accept header" do
+    get_via_redirect '/index', {}, {'Accept' => 'text/html'}
+    expect(response.header['Content-Type']).to include('text/html')
   end
-    
-  it "adds a new feed when inserting a new item into a new feed" do
-    post_via_redirect '', 
-      FactoryGirl.attributes_for(:feed_item, feed_name: "new_feed")
-    expect(assigns(:feed_items).length).to eq(1)
-    expect(assigns(:feed_items)[0].feed_name).to eq("new_feed")
-    get '/index'
-    expect(assigns(:feeds).length).to eq(3)
+
+  it "serves index as rss with the accept header" do
+    get_via_redirect '/index', {}, {'Accept' => 'application/rss+xml'}
+    expect(response.header['Content-Type']).to include('application/rss+xml')
   end
-    
-  it "removes the item when updated with a blank description" do
-    post_via_redirect '', 
-      FactoryGirl.attributes_for(:feed_item, title: "item 1", 
-                                 description: "")
-    expect(assigns(:feed_items).map{|f| f.title}).not_to include("item 1")
-    expect(assigns(:feed_items).length).to eq(1)
-    get '/index'
-    expect(assigns(:feeds).length).to eq(2)
+
+  it "serves feed as html by default" do
+    get_via_redirect '/other_test_feed'
+    expect(response.header['Content-Type']).to include('text/html')
   end
-    
-  it "removes the feed when deleting the last item from a feed" do
-    post_via_redirect '', 
-      FactoryGirl.attributes_for(:feed_item, feed_name: "other_test_feed",
-                                 description: "")
-    get '/index'
-    expect(assigns(:feeds).length).to eq(1)
+
+  it "serves feed.html as html" do
+    get_via_redirect '/other_test_feed.html'
+    expect(response.header['Content-Type']).to include('text/html')
+  end
+
+  it "serves feed.rss as rss" do
+    get_via_redirect '/other_test_feed.rss'
+    expect(response.header['Content-Type']).to include('application/rss+xml')
+  end
+  
+  it "serves feed as html with the accept header" do
+    get_via_redirect '/other_test_feed', {}, {'Accept' => 'text/html'}
+    expect(response.header['Content-Type']).to include('text/html')
+  end
+
+  it "serves feed as rss with the accept header" do
+    get_via_redirect '/other_test_feed', {}, {'Accept' => 'application/rss+xml'}
+    expect(response.header['Content-Type']).to include('application/rss+xml')
   end
 end
 
