@@ -8,7 +8,6 @@ describe FeedController do
     it "responds successfully with an HTTP 200 status code" do
       get :index
       expect(response).to be_success
-      expect(response.status).to eq(200)
     end
 
     it "renders the index template" do
@@ -33,15 +32,19 @@ describe FeedController do
       expect(response).to redirect_to(index_path)
     end 
 
+    it "does not redirect an emtpy rss document for an empty feed" do
+      get :show, feed_name: "empty_feed", format: "rss"
+      expect(response).to be_success
+    end 
+
     it "returns an emtpy rss document for an empty feed" do
       get :show, feed_name: "empty_feed", format: "rss"
-      expect(response.status).to be(200)
+      expect(assigns(:feed_items)).to be_empty
     end 
     
     it "responds successfully with an HTTP 200 status code" do
       get :show, feed_name: "test_feed"
       expect(response).to be_success
-      expect(response.status).to eq(200)
     end
 
     it "renders the index template" do
