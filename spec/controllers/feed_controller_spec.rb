@@ -28,9 +28,14 @@ describe FeedController do
     let!(:feed_item2) { FactoryGirl.create(:feed_item, 
       feed_name: "test_feed", title: "item 2") }
     
-    it "redirects an emtpy feed to the index" do
+    it "redirects an emtpy html feed to the index" do
       get :show, feed_name: "empty_feed"
       expect(response).to redirect_to(index_path)
+    end 
+
+    it "returns an emtpy rss document for an empty feed" do
+      get :show, feed_name: "empty_feed", format: "rss"
+      expect(response.status).to be(200)
     end 
     
     it "responds successfully with an HTTP 200 status code" do

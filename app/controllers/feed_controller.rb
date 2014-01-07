@@ -58,10 +58,10 @@ class FeedController < ApplicationController
   end
   
 
-  private
+  # private
 
 
-  def create_item
+  private def create_item
     item = FeedItem.new(:feed_name => params[:feed_name],
       :title => params[:title],
       :description => params[:description])
@@ -80,7 +80,7 @@ class FeedController < ApplicationController
   end
 
 
-  def update_item(item)
+  private def update_item(item)
     if item.update_attribute(:description, params[:description])
       flash[:notice] = "Element #{params[:title]} updated"
       respond_to do |format|
@@ -97,7 +97,7 @@ class FeedController < ApplicationController
   end
 
 
-  def destroy_item(item)
+  private def destroy_item(item)
     if item.destroy
       flash[:notice] = "Element #{params[:title]} deleted"
       respond_to do |format|
