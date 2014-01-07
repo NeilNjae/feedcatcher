@@ -1,12 +1,6 @@
 require 'spec_helper'
 
 describe "format" do
-  let!(:feed_item1) { FactoryGirl.create(:feed_item, 
-      title: "item 1") }
-  let!(:feed_item2) { FactoryGirl.create(:feed_item, 
-      title: "item 2") }
-  let!(:other_feed_item) { FactoryGirl.create(:feed_item, 
-      feed_name: "other_test_feed") }
 
   it "serves index as html by default" do
     get_via_redirect '/index'
