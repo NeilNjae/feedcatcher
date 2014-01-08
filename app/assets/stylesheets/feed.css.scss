@@ -1,3 +1,25 @@
 // Place all the styles related to the feed controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  font-family: Verdana, sans-serif;
+}
+
+li {
+  padding: 0.2em 0;
+}
+
+dd {
+  padding: 0 0 0.3em;
+}
+
+/* START:notice */
+#notice {
+  border: 2px solid red;
+  padding: 1em;
+  margin-bottom: 2em;
+  background-color: #f0f0f0;
+  font: bold smaller sans-serif;
+}
+/* END:notice */
