@@ -7,7 +7,7 @@ set :stage, :production
 # unless any hosts have the primary property set.
 role :app, %w{deploy@feedcatcher.njae.me.uk}
 role :web, %w{deploy@feedcatcher.njae.me.uk}
-role :db,  %w{deploy@feedcatcher.njae.me.uk}
+role :db,  %w{deploy@feedcatcher.njae.me.uk}, primary: true
 
 # Extended Server Syntax
 # ======================
