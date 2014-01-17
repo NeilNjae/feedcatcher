@@ -1,9 +1,8 @@
 class FeedController < ApplicationController
   
-  skip_before_filter :verify_authenticity_token
+  # skip_before_filter :verify_authenticity_token
 
   def index
-    # @feeds = FeedItem.find(:all, :select => 'DISTINCT feed_name')
     @feeds = FeedItem.select(:feed_name).distinct
     respond_to do |format|
       format.html
@@ -17,7 +16,7 @@ class FeedController < ApplicationController
       @feed_name = params[:feed_name]
       @feed_items = FeedItem.in_feed(@feed_name)
       respond_to do |format|
-        if @feed_items == []
+        if @feed_items.empty?
           flash[:notice] = "No items in feed #{@feed_name}"
           format.html { redirect_to index_path }
           format.rss  { render :layout => false }
