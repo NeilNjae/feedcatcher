@@ -1,7 +1,5 @@
 class FeedController < ApplicationController
   
-  # skip_before_filter :verify_authenticity_token
-
   def index
     @feeds = FeedItem.select(:feed_name).distinct
     respond_to do |format|
@@ -9,7 +7,6 @@ class FeedController < ApplicationController
       format.rss { render :layout => false }
     end
   end
-
   
   def show
     if FeedItem::valid_feed_name?(params[:feed_name])
@@ -33,7 +30,6 @@ class FeedController < ApplicationController
       end
     end
   end
-
 
   def update
     if FeedItem::valid_feed_name?(params[:feed_name])
@@ -59,7 +55,6 @@ class FeedController < ApplicationController
 
   # private
 
-
   private def create_item
     item = FeedItem.new(:feed_name => params[:feed_name],
       :title => params[:title],
@@ -78,7 +73,6 @@ class FeedController < ApplicationController
     end
   end
 
-
   private def update_item(item)
     if item.update_attribute(:description, params[:description])
       flash[:notice] = "Element #{params[:title]} updated"
@@ -94,7 +88,6 @@ class FeedController < ApplicationController
       end
     end
   end
-
 
   private def destroy_item(item)
     if item.destroy
